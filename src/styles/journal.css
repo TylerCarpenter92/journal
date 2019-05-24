@@ -1,0 +1,8 @@
+fieldset{
+    display: flex;
+    flex-direction: column;
+}
+
+textarea{
+    display: flex;
+}
