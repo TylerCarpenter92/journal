@@ -9,7 +9,7 @@
     Define the keys and value for a JavaScript object that
     represents a journal entry about what you learned today
 */
-const entryArray = []
+const journalEntry = []
 
 const journalEntryMonday = {
     Date: `6/3/19`,
@@ -18,7 +18,7 @@ const journalEntryMonday = {
     Mood: `confused`
 }
 
-entryArray.push(journalEntryMonday)
+journalEntry.push(journalEntryMonday)
 
 const journalEntryTuesday = {
     Date: `6/4/19`,
@@ -27,7 +27,7 @@ const journalEntryTuesday = {
     Mood: `excited`
 }
 
-entryArray.push(journalEntryTuesday)
+journalEntry.push(journalEntryTuesday)
 
 /*
     Purpose: To create, and return, a string template that
@@ -35,7 +35,6 @@ entryArray.push(journalEntryTuesday)
 
     Arguments: journalEntry (object)
 */
-const thisPoints = document.querySelector(".entries")
 
 const makeJournalEntryComponent = (journalEntry) => {
     // Create your own HTML structure for a journal entry
@@ -47,7 +46,24 @@ const makeJournalEntryComponent = (journalEntry) => {
         </article>
     </section>`
 }
-entryArray.forEach( function(entries){
-    thisPoints.innerHTML += makeJournalEntryComponent(entries)});
-// thisPoints.innerHTML += makeJournalEntryComponent()
+
+
+
+/*
+    Purpose: To render all journal entries to the DOM
+
+    Arguments: entries (array of objects)
+*/
+const renderJournalEntries = (entries) => {
+    let thisPoints = document.querySelector(".entryLog")
+    entries.forEach( function(obj){
+        thisPoints.innerHTML += makeJournalEntryComponent(obj)});
+    // thisPoints.innerHTML += makeJournalEntryComponent()
+}
+
+// Invoke the render function
+renderJournalEntries(journalEntry)
+// entryArray.forEach( function(entries){
+//     thisPoints.innerHTML += makeJournalEntryComponent(entries)});
+// // thisPoints.innerHTML += makeJournalEntryComponent()
 
