@@ -37,7 +37,7 @@
 */
 
 const makeJournalEntryComponent = (journalEntry) => {
-    // Create your own HTML structure for a journal entry
+    // function that returns the html code
     return`
      <h2> ${journalEntry.Concept} </h2>
     <section>
@@ -54,6 +54,7 @@ const makeJournalEntryComponent = (journalEntry) => {
 
     Arguments: entries (array of objects)
 */
+//funtion that will select the target for the DOM and display the entries
 const renderJournalEntries = (entries) => {
     console.log(entries)
     let thisPoints = document.querySelector(".entryLog")
@@ -72,9 +73,10 @@ fetch(`http://localhost:3000/entries`) // Fetch from the API
     .then(response => response.json())  // Parse as JSON
     .then(entries => {
         console.log(entries)
-        // What should happen when we finally have the array?
+        // looping through json elements
         entries.forEach((journalEntry) => {
             console.log(journalEntry)
+            //sending one object to the funtion
             renderJournalEntries(journalEntry)
         })
     })
