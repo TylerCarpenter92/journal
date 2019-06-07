@@ -1,0 +1,16 @@
+{
+    "entries":[
+        {
+            "Date": "6/3/19",
+            "Concept": "Dot method vs bracket method",
+            "Entry": "i feel that dot method is quicker and easier but bracket method is more useful.",
+            "Mood": "confused"
+        },
+        {
+            "Date": "6/4/19",
+            "Concept": "Using Objects",
+            "Entry": "learned that an object can also hold a function. its called a method.",
+            "Mood": "excited"
+        }
+    ]
+}
