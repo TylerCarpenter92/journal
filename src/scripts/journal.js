@@ -36,16 +36,16 @@
     Arguments: journalEntry (object)
 */
 
-const makeJournalEntryComponent = (journalEntry) => {
-    // Create your own HTML structure for a journal entry
-    return`
-     <h2> ${journalEntry.Concept} </h2>
-    <section>
-        <article>
-            <p> ${journalEntry.Entry} <br> ${journalEntry.Mood} <br> ${journalEntry.Date} </p>
-        </article>
-    </section>`
-}
+// const makeJournalEntryComponent = (journalEntry) => {
+//     // Create your own HTML structure for a journal entry
+//     return`
+//      <h2> ${journalEntry.Concept} </h2>
+//     <section>
+//         <article>
+//             <p> ${journalEntry.Entry} <br> ${journalEntry.Mood} <br> ${journalEntry.Date} </p>
+//         </article>
+//     </section>`
+// }
 
 
 
@@ -54,11 +54,11 @@ const makeJournalEntryComponent = (journalEntry) => {
 
     Arguments: entries (array of objects)
 */
-const renderJournalEntries = (entries) => {
-    console.log(entries)
-    let thisPoints = document.querySelector(".entryLog")
-        thisPoints.innerHTML += makeJournalEntryComponent(entries)
-};
+// const renderJournalEntries = (entries) => {
+//     console.log(entries)
+//     let thisPoints = document.querySelector(".entryLog")
+//         thisPoints.innerHTML += makeJournalEntryComponent(entries)
+// };
     // thisPoints.innerHTML += makeJournalEntryComponent()
 
 
@@ -68,13 +68,20 @@ const renderJournalEntries = (entries) => {
 //     thisPoints.innerHTML += makeJournalEntryComponent(entries)});
 // // thisPoints.innerHTML += makeJournalEntryComponent()
 
-fetch(`http://localhost:3000/entries`) // Fetch from the API
-    .then(response => response.json())  // Parse as JSON
-    .then(entries => {
-        console.log(entries)
-        // What should happen when we finally have the array?
-        entries.forEach((journalEntry) => {
-            console.log(journalEntry)
-            renderJournalEntries(journalEntry)
-        })
-    })
+// fetch(`http://localhost:3000/entries`) // Fetch from the API
+//     .then(response => response.json())  // Parse as JSON
+    // .then(entries => {
+    //     console.log(entries)
+    //     // What should happen when we finally have the array?
+    //     entries.forEach((journalEntry) => {
+    //         console.log(journalEntry)
+    //         renderJournalEntries(journalEntry)
+    //     })
+    // })
+
+    // // API.getJournalEntries().then(entries => {
+    //     console.log(`here`)
+    //     renderJournalEntries(entries)
+    // })
+    API.getJournalEntries().then(renderJournalEntries)
+    
