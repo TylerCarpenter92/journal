@@ -88,15 +88,21 @@ function clickSave() {
     let concept = document.querySelector(".conceptIdea").value;
     let entry = document.querySelector(".journalEntries").value;
     let mood = document.querySelector(".yourFeeling").value;
+    let x = /[^a-zA-Z0-9(){}:;\s.?!,"']/g
+    let conceptTest = concept.match(x)
+    let entryTest = entry.match(x)
     if (date == "" || concept == "" || entry == "" || mood == "") {
       alert(`please finish filling out journal entry`);
       return
     }
+    else if(conceptTest !== null || entryTest !== null){
+      alert(`please enter the correct statement`)
+      return
+    }
     let newEntry = createJournalEntry(date,concept,entry,mood)
 
-    API.saveJournalEntry(newEntry)
-
-
+    API.saveJournalEntry(newEntry).then( data => API.getJournalEntries().then(renderJournalEntries))
+    // API.getJournalEntries().then(renderJournalEntries);
   });
 }
 
