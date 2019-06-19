@@ -48,6 +48,20 @@
       "Entry": ")(",
       "Mood": "sad",
       "id": 7
+    },
+    {
+      "Date": "2019-06-19",
+      "Concept": "testing happy",
+      "Entry": "this should display",
+      "Mood": "happy",
+      "id": 8
+    },
+    {
+      "Date": "2019-06-19",
+      "Concept": "test weird",
+      "Entry": "this is a test for weird",
+      "Mood": "weird",
+      "id": 9
     }
   ]
 }

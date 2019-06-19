@@ -21,7 +21,6 @@
           class="conceptIdea"
           cols="30"
           rows="2"
-          required
         ></textarea>
       </fieldset>
       <fieldset>
@@ -31,25 +30,35 @@
           class="journalEntries"
           cols="30"
           rows="4"
-          required
         ></textarea>
       </fieldset>
       <fieldset>
         <label for="journalFeelings">how are you feeling?</label>
         <select name="yourFeeling" class="yourFeeling">
-            <option value=""></option>
+          <option value=""></option>
           <option value="happy">happy</option>
           <option value="sad">sad</option>
           <option value="weird">weird</option>
           <option value="excited">excited</option>
         </select>
       </fieldset>
-      <input id = "submit-btn" type="button" value="submit" />
+      <input id="submit-btn" type="button" value="submit" />
+    </form>
+    <form>
+      <p>Please select a mood to display:</p>
+      <input type="radio" id="moodChoice1" name="moodChoice" value="happy" />
+      <label for="moodChoice1">happy</label>
+
+      <input type="radio" id="moodChoice2" name="moodChoice" value="sad" />
+      <label for="moodChoice2">sad</label>
+
+      <input type="radio" id="moodChoice3" name="moodChoice" value="weird" />
+      <label for="moodChoice3">weird</label>
+      <input type="radio" id="moodChoice4" name="moodChoice" value="excited" />
+      <label for="moodChoice4">excited</label>
     </form>
 
-    <article class="entryLog">
-
-    </article>
+    <article class="entryLog"></article>
 
     <script src="scripts/data.js"></script>
     <script src="scripts/entryComponent.js"></script>
