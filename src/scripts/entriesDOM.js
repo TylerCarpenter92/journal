@@ -1,9 +1,11 @@
-const renderJournalEntries = (entries) => {
-    console.log(entries)
-    entries.forEach((journalEntry) => {
-    let thisPoints = document.querySelector(".entryLog")
-        thisPoints.innerHTML += makeJournalEntryComponent(journalEntry)
-    })
+const renderJournalEntries = entries => {
+  console.log(`beginning`);
+  entries.forEach(journalEntry => {
+    let thisPoints = document.querySelector(".entryLog");
+    thisPoints.innerHTML += makeJournalEntryComponent(journalEntry);
+    
+  });
+  console.log(`end`)
 };
 
 // .then(entries => {

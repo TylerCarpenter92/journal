@@ -47,8 +47,6 @@
 //     </section>`
 // }
 
-
-
 /*
     Purpose: To render all journal entries to the DOM
 
@@ -59,8 +57,7 @@
 //     let thisPoints = document.querySelector(".entryLog")
 //         thisPoints.innerHTML += makeJournalEntryComponent(entries)
 // };
-    // thisPoints.innerHTML += makeJournalEntryComponent()
-
+// thisPoints.innerHTML += makeJournalEntryComponent()
 
 // Invoke the render function
 // renderJournalEntries(journalEntry)
@@ -70,18 +67,46 @@
 
 // fetch(`http://localhost:3000/entries`) // Fetch from the API
 //     .then(response => response.json())  // Parse as JSON
-    // .then(entries => {
-    //     console.log(entries)
-    //     // What should happen when we finally have the array?
-    //     entries.forEach((journalEntry) => {
-    //         console.log(journalEntry)
-    //         renderJournalEntries(journalEntry)
-    //     })
-    // })
+// .then(entries => {
+//     console.log(entries)
+//     // What should happen when we finally have the array?
+//     entries.forEach((journalEntry) => {
+//         console.log(journalEntry)
+//         renderJournalEntries(journalEntry)
+//     })
+// })
 
-    // // API.getJournalEntries().then(entries => {
-    //     console.log(`here`)
-    //     renderJournalEntries(entries)
-    // })
-    API.getJournalEntries().then(renderJournalEntries)
-    
+// // API.getJournalEntries().then(entries => {
+//     console.log(`here`)
+//     renderJournalEntries(entries)
+// })
+API.getJournalEntries().then(renderJournalEntries);
+
+function clickSave() {
+  document.getElementById("submit-btn").addEventListener("click", () => {
+    let date = document.querySelector(".journalDate").value;
+    let concept = document.querySelector(".conceptIdea").value;
+    let entry = document.querySelector(".journalEntries").value;
+    let mood = document.querySelector(".yourFeeling").value;
+    if (date == "" || concept == "" || entry == "" || mood == "") {
+      alert(`please finish filling out journal entry`);
+      return
+    }
+    let newEntry = createJournalEntry(date,concept,entry,mood)
+
+    API.saveJournalEntry(newEntry)
+
+
+  });
+}
+
+clickSave()
+
+function createJournalEntry(date, concept, entry, mood){
+    return{
+        Date: date,
+        Concept: concept,
+        Entry: entry,
+        Mood: mood
+    };
+}
