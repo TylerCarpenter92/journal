@@ -21,6 +21,7 @@
           class="conceptIdea"
           cols="30"
           rows="2"
+          required
         ></textarea>
       </fieldset>
       <fieldset>
@@ -30,18 +31,20 @@
           class="journalEntries"
           cols="30"
           rows="4"
+          required
         ></textarea>
       </fieldset>
       <fieldset>
         <label for="journalFeelings">how are you feeling?</label>
         <select name="yourFeeling" class="yourFeeling">
+            <option value=""></option>
           <option value="happy">happy</option>
           <option value="sad">sad</option>
           <option value="weird">weird</option>
-          <option value="excited"></option>
+          <option value="excited">excited</option>
         </select>
       </fieldset>
-      <input type="button" value="submit" />
+      <input id = "submit-btn" type="button" value="submit" />
     </form>
 
     <article class="entryLog">
