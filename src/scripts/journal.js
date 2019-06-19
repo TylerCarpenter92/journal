@@ -116,3 +116,17 @@ function createJournalEntry(date, concept, entry, mood){
         Mood: mood
     };
 }
+
+let radioBTN = document.getElementsByName("moodChoice")
+radioBTN.forEach(radio => {
+  radio.addEventListener("click", event => {
+    let moodValue = event.target.value
+    console.log(moodValue)
+    API.getJournalEntries().then(entries => {
+      let moodString = entries.filter(entry => entry.Mood === `${moodValue}`)
+      console.log(moodString)
+      renderJournalEntries(moodString)
+    })
+    
+  })
+})
