@@ -15,53 +15,32 @@
       "Mood": "excited"
     },
     {
-      "Date": "2019-06-19",
-      "Concept": "test",
-      "Entry": "this test",
-      "Mood": "sad",
+      "Date": "2019-06-24",
+      "Concept": "this is a test",
+      "Entry": "just running a test for the edit button",
+      "Mood": "weird",
       "id": 3
     },
     {
-      "Date": "2019-06-19",
-      "Concept": "test 2",
-      "Entry": "another test",
-      "Mood": "sad",
+      "Date": "2019-06-24",
+      "Concept": "test save button",
+      "Entry": "testing the save button",
+      "Mood": "happy",
       "id": 4
     },
     {
-      "Date": "2019-06-19",
-      "Concept": "test 3",
-      "Entry": "another fucking test",
-      "Mood": "sad",
-      "id": 5
+      "id": 5,
+      "Date": "2019-06-24",
+      "Concept": "test id update\n        ",
+      "Entry": "testing id edit\n        ",
+      "Mood": "happy"
     },
     {
-      "Date": "2019-06-19",
-      "Concept": "this",
-      "Entry": "thing",
-      "Mood": "sad",
-      "id": 6
-    },
-    {
-      "Date": "2019-06-19",
-      "Concept": "this",
-      "Entry": ")(",
-      "Mood": "sad",
-      "id": 7
-    },
-    {
-      "Date": "2019-06-19",
-      "Concept": "testing happy",
-      "Entry": "this should display",
-      "Mood": "happy",
-      "id": 8
-    },
-    {
-      "Date": "2019-06-19",
-      "Concept": "test weird",
-      "Entry": "this is a test for weird",
-      "Mood": "weird",
-      "id": 9
+      "id": 6,
+      "Date": "2019-06-24",
+      "Concept": "does it work?",
+      "Entry": "hopefully this works",
+      "Mood": "happy"
     }
   ]
 }
