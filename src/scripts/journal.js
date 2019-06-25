@@ -84,38 +84,34 @@ API.getJournalEntries().then(renderJournalEntries);
 
 function clickSave() {
   document.getElementById("submit-btn").addEventListener("click", () => {
+    let id = ""
     let date = document.querySelector(".journalDate").value;
     let concept = document.querySelector(".conceptIdea").value;
     let entry = document.querySelector(".journalEntries").value;
     let mood = document.querySelector(".yourFeeling").value;
-    let x = /[^a-zA-Z0-9(){}:;\s.?!,"']/g
-    let conceptTest = concept.match(x)
-    let entryTest = entry.match(x)
+    let x = /[^a-zA-Z0-9(){}:;\s.?!,"']/g;
+    let conceptTest = concept.match(x);
+    let entryTest = entry.match(x);
     if (date == "" || concept == "" || entry == "" || mood == "") {
       alert(`please finish filling out journal entry`);
-      return
+      return;
+    } else if (conceptTest !== null || entryTest !== null) {
+      alert(`please enter the correct statement`);
+      return;
     }
-    else if(conceptTest !== null || entryTest !== null){
-      alert(`please enter the correct statement`)
-      return
-    }
-    let newEntry = createJournalEntry(date,concept,entry,mood)
+    let newEntry = createJournalEntry(date, concept, entry, mood, id);
 
-    API.saveJournalEntry(newEntry).then( data => API.getJournalEntries().then(renderJournalEntries))
+    API.saveJournalEntry(newEntry).then(data =>
+      API.getJournalEntries().then(renderJournalEntries)
+    );
     // API.getJournalEntries().then(renderJournalEntries);
   });
 }
 
+
 clickSave()
 
-function createJournalEntry(date, concept, entry, mood){
-    return{
-        Date: date,
-        Concept: concept,
-        Entry: entry,
-        Mood: mood
-    };
-}
+
 
 let radioBTN = document.getElementsByName("moodChoice")
 radioBTN.forEach(radio => {
@@ -129,4 +125,4 @@ radioBTN.forEach(radio => {
     })
     
   })
-})
+}) 

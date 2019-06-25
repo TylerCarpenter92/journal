@@ -1,13 +1,11 @@
+let thisPoints = document.querySelector(".entryLog");
+
 const renderJournalEntries = entries => {
-  console.log(entries);
-  let string = ""
-  let thisPoints = document.querySelector(".entryLog");
+  thisPoints.innerHTML = ""
   entries.forEach(journalEntry => {
-    string += makeJournalEntryComponent(journalEntry)
+    let newHTMLEntry = makeJournalEntryComponent(journalEntry)
+    thisPoints.appendChild(newHTMLEntry)
   });
-  console.log(string)
-  thisPoints.innerHTML = string
-  // console.log(`end`)
 };
 
 // .then(entries => {

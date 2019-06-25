@@ -10,7 +10,7 @@
 
 const API = {
   getJournalEntries() {
-    console.log(`anothertest`)
+    console.log(`anothertest`);
     return fetch("http://localhost:3000/entries").then(response =>
       response.json()
     );
@@ -25,6 +25,22 @@ const API = {
       },
       body: JSON.stringify(newEntry)
     });
-    
+  },
+  deleteJournalEntry(id) {
+    return fetch(`http://localhost:3000/entries/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+  },
+  editJournalEntry(editEntry) {
+    return fetch(`http://localhost:3000/entries/${editEntry.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editEntry)
+    });
   }
 };
